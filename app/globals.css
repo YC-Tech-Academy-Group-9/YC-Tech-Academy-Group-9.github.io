@@ -6,6 +6,11 @@
   --foreground-rgb: 0, 0, 0;
   --background-start-rgb: 214, 219, 220;
   --background-end-rgb: 255, 255, 255;
+  --text: #060505;
+  --background: #faf9fa;
+  --primary: #615153;
+  --secondary: #d3cacb;
+  --accent: #725f61;
 }
 
 @media (prefers-color-scheme: dark) {
@@ -17,11 +22,28 @@
 }
 
 body {
-  color: rgb(var(--foreground-rgb));
-  background: linear-gradient(
-      to bottom,
-      transparent,
-      rgb(var(--background-end-rgb))
-    )
-    rgb(var(--background-start-rgb));
+  @apply text-text bg-background;
+}
+
+h1 {
+  @apply text-5xl font-bold;
+}
+
+h2 {
+  @apply text-4xl font-bold;
+}
+
+.prime_gradient {
+  background: linear-gradient(120deg, var(--primary), var(--accent));
+}
+
+.color-effect {
+  background: linear-gradient(120deg, var(--primary), var(--accent));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.blogLink:hover {
+  @apply text-accent;
+  transform: scale(1.1);
 }
